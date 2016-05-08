@@ -20,5 +20,6 @@ from views import MyView, PlusTime
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', MyView.as_view()),
+    url(r'^plus/$', PlusTime.as_view()),
     url(r'^plus/(?P<plus>[\d]+)/', PlusTime.as_view()),
 ]

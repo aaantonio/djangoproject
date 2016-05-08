@@ -17,5 +17,5 @@ class PlusTime(TemplateView):
 		try:
 			context['plus'] = datetime.now() + timedelta(hours=int(self.kwargs['plus']))
 		except:
-			context['plus'] = 'Invalid Format!'
+			context['plus'] = datetime.now()
 		return context
