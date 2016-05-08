@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from views import MyView, PlusTime
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', MyView.as_view()),
+    url(r'^plus/(?P<plus>[\d]+)/', PlusTime.as_view()),
 ]
