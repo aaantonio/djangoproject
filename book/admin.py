@@ -10,7 +10,8 @@ class PublisherAdmin(admin.ModelAdmin):
 	list_display = ['name', 'website']
 
 class BookAdmin(admin.ModelAdmin):
-	pass
+	list_display = ['name', 'publisher', 'published_date']
+	list_filter = ['published_date', 'author']
 
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Author, AuthorAdmin)

@@ -21,7 +21,7 @@ class Publisher(models.Model):
 class Book(models.Model):
     name = models.CharField(max_length=50)
     author = models.ManyToManyField(Author)
-    Publisher = models.ForeignKey(Publisher)
+    publisher = models.ForeignKey(Publisher)
     published_date = models.DateField()
     
     def __str__(self):
