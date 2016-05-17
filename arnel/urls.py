@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from views import MyView, PlusTime, AuthorCreate, AuthorView
+from views import MyView, PlusTime
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', MyView.as_view()),
     url(r'^plus/$', PlusTime.as_view()),
     url(r'^plus/(?P<plus>[\d]+)/', PlusTime.as_view()),
-    url(r'^author/create', AuthorCreate.as_view()), 
-    url(r'^author/$', AuthorView.as_view()),
 ]

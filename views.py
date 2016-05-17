@@ -1,6 +1,5 @@
-from django.views.generic import TemplateView, CreateView, ListView
+from django.views.generic import TemplateView
 from datetime import datetime, timedelta
-from book.models import Author, Publisher, Book
 
 class MyView(TemplateView):
     template_name = 'home.html'
@@ -20,14 +19,3 @@ class PlusTime(TemplateView):
 		except:
 			context['plus'] = datetime.now()
 		return context
-
-class AuthorCreate(CreateView):
-	model = Author
-	template_name = 'authorcreate.html'
-	fields = ['first_name', 'last_name', 'email']
-	success_url = '/author'
-
-class AuthorView(ListView):
-	model = Author
-	template_name = 'author.html'
-	context_object_name = 'author'
