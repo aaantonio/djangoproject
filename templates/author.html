@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<title> This is the author list </title>
+<body>
+<table border="1">
+
+{% for item in author %}
+	<tr>
+	<td>{{ item.first_name}}</td>
+	<td>{{ item.last_name}}</td>
+	<td>{{ item.email}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+<a href="create">Create Author</a>
+</body>
+</html>
