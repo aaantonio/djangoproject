@@ -1,0 +1,31 @@
+<html>
+<title> This is the list of all authors </title>
+<body>
+
+{% for author in object_list %}
+    <p align="center">
+    <a href="/author/{{ author.pk }}"> PK: {{ author.pk }}</a> <br>
+    ID: {{ author.id }} <br>   
+    First Name: {{ author.first_name }} <br>
+    Last Name: {{ author.last_name }} <br>
+    {% if author.email %}
+    Email: {{ author.email }}
+    {% endif %}
+    </p>  
+{% endfor %}
+
+{% if author %}
+    <p align="center">
+    <a href="/author/{{ author.pk }}"> PK: {{ author.pk }}</a> <br>
+    ID: {{ author.id }} <br>   
+    First Name: {{ author.first_name }} <br>
+    Last Name: {{ author.last_name }} <br>
+    {% if author.email %}
+    Email: {{ author.email }}
+    {% endif %}
+    <a href="/author/{{ author.pk }}/delete"> Delete </a>
+	<a href="/author/{{ author.pk }}/update"> Update </a>
+    </p>  
+{% endif %}
+</body>
+</html>
