@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, CreateView, DetailView, UpdateView, DeleteView
 from .models import Author, Publisher, Book
@@ -26,8 +25,8 @@ class AuthorUpdateView(UpdateView):
 	# def get_success_url(self):
 	# 	return reverse('AuthorDetail', kwargs={'pk': self.object.pk})
 	
-
 class AuthorDeleteView(DeleteView):
 	model = Author
 	success_url = '/author'
 	template_name = 'authorcreate.html'
+

@@ -16,7 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from views import MyView, PlusTime
+
 from book.views import AuthorCreateView, AuthorListView, AuthorDetailView, AuthorDeleteView, AuthorUpdateView
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -28,4 +30,6 @@ urlpatterns = [
     url(r'^author/(?P<pk>[\d]+)$', AuthorDetailView.as_view(), name='AuthorDetail'),
     url(r'^author/(?P<pk>[\d]+)/delete$', AuthorDeleteView.as_view()),
     url(r'^author/(?P<pk>[\d]+)/update$', AuthorUpdateView.as_view()),
+
 ]
+
