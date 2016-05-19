@@ -8,7 +8,7 @@ class Author(models.Model):
     email      = models.EmailField(max_length=50, verbose_name='e-mail', blank=True)
 
     def get_absolute_url(self):
-        return reverse('AuthorDetail', args=[self.pk])
+        return reverse('AuthorDetail', args=(self.pk,))
 
     def __str__(self):
         return self.first_name + " " + self.last_name

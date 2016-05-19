@@ -30,3 +30,4 @@ class AuthorUpdateView(UpdateView):
 class AuthorDeleteView(DeleteView):
 	model = Author
 	success_url = '/author'
+	template_name = 'authorcreate.html'
